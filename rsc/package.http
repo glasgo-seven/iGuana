@@ -1,0 +1,6 @@
+[PackageName]
+~ template_A.htt []
+
++ template_B.htt [HelloWorld]
+
+! template_C.htt []
