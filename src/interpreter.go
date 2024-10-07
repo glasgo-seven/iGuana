@@ -12,14 +12,15 @@ import (
 
 const (
 	//	Regular expression for searching for <import>
-	TAG_IMPORT_REGEX  string = `<import src=("|')\w*\.http("|') ?\/>`
+	TAG_IMPORT_REGEX  string = `^\s*<import src=["|']\w*\.http["|'] ?\/>`
 	//	Regular expression for searching for <require>
-	TAG_REQUIRE_REGEX string = `<require template=("|')\w*\.htt("|') ?\/>`
+	TAG_REQUIRE_REGEX string = `^\s*<require template=["|']\w*\.htt["|'] ?\/>`
 	//	Regular expression for searching for <call>
-	TAG_CALL_REGEX    string = `<call template=("|')\w*\.\w*("|') ?\/>`
+	TAG_CALL_REGEX    string = `^\s*<call template=["|']\w*\.\w*["|'] ?\/>`
 
 	//	Regular expression to preserve indentations of the tags
-	LINE_IDENT_REGEX string = `^( +|\t+|)`
+	// LINE_IDENT_REGEX string = `^( +|\t+|)`
+	LINE_IDENT_REGEX string = `^\s*<`
 
 	//	Regular expression to find file paths
 	PATH_REGEX string = `\w+\.\w+`
@@ -52,22 +53,26 @@ func ReadFile(_relFilePath string) {
 	//	Separates relative path to files and a file name
 	pathSeparator := strings.LastIndex(_relFilePath, "/")
 	RELATIVE_PATH	= _relFilePath[:pathSeparator]
-	fileName		:= _relFilePath[pathSeparator+1:]
-	log.Println(RELATIVE_PATH, fileName)
+	// fileName		:= _relFilePath[pathSeparator+1:]
+	// log.Println(RELATIVE_PATH, fileName)
 	
 	//	Read HTML file
 	data, err := os.ReadFile(_relFilePath)
 	check(err)
+	log.Printf("\n%s", data)
 
 	// var fileLines []string = strings.Split(string(data), "\n")
 
 	//	Create regex Compiler
 	regexTagCompiler, err := regexp.Compile(TAG_COMPILER_REGEX)
+	check(err)
 	//	Search for all indexes that matches our new tags
 	regexTagCompilerFinds := regexTagCompiler.FindAllIndex(data, -1)
+	log.Printf("%v", regexTagCompilerFinds)
 
-	regexIdentationCompiler, err := regexp.Compile(LINE_IDENT_REGEX)
-	// regexIdentationCompilerFinds := regexIdentationCompiler.FindAllIndex(data, -1)
+	regexIndentationCompiler, err := regexp.Compile(LINE_IDENT_REGEX)
+	check(err)
+	// regexIndentationCompilerFinds := regexIndentationCompiler.FindAllIndex(data, -1)
 
 	// log.Println(regexFinds)
 
@@ -88,7 +93,7 @@ func ReadFile(_relFilePath string) {
 			//	Import all templates from package
 			regexImportFileCompiler, err := regexp.Compile(PATH_REGEX)
 			check(err)
-			importFileName := string(regexImportFileCompiler.Find(data))
+			importFileName := string(regexImportFileCompiler.Find([]byte(tag)))
 			parseImportFile(importFileName)
 
 			continue
@@ -98,7 +103,7 @@ func ReadFile(_relFilePath string) {
 			//	Put content of template
 			regexRequestFileCompiler, err := regexp.Compile(PATH_REGEX)
 			check(err)
-			requestFileName := string(regexRequestFileCompiler.Find(data))
+			requestFileName := string(regexRequestFileCompiler.Find([]byte(tag)))
 			parseRequestFile(requestFileName)
 
 			continue
@@ -108,12 +113,12 @@ func ReadFile(_relFilePath string) {
 			//	Use one of the templates from package
 			regexCallCompiler, err := regexp.Compile(PATH_REGEX)
 			check(err)
-			call := string(regexCallCompiler.Find(data))
+			call := string(regexCallCompiler.Find([]byte(tag)))
 
-			regexIdentationCompilerFinds := regexIdentationCompiler.FindAllIndex(data, -1)
+			regexIndentationCompilerFinds := regexIndentationCompiler.Find([]byte(tag))
+			println(tag)
 
-
-			parseCall(call, regexIdentationCompilerFinds[len(regexIdentationCompilerFinds)-1][1])
+			parseCall(call, len(regexIndentationCompilerFinds)-1)
 
 			continue
 		}
@@ -122,7 +127,7 @@ func ReadFile(_relFilePath string) {
 	//	Save everything after tags
 	newFile += string(data[currentIndex:])
 
-	//log.Println(newFile)
+	log.Println(newFile)
 
 	unpackDict()
 
