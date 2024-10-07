@@ -5,5 +5,8 @@ import (
 )
 
 func main() {
-	iguana.ReadFile("./rsc/index.html")
+	iguana.GenerateHTML("./rsc/index.html", "iguana.html")
+
+	// ! Loosing leading '<' of parent file
+	// iguana.GenerateHTML("./rsc/index_oneline.html", "iguana.html")
 }

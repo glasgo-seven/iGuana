@@ -1,5 +1,6 @@
-<require template="template_A.htt" />
+<require template="template_C.htt" />
 <div>
+	<call template="PackageName.template_A" />
 	<h1>Hello World!</h1>
-	<call template="templateA" />
+	<call template="require.template_C" />
 </div>

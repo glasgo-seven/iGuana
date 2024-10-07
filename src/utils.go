@@ -14,7 +14,7 @@ func unpackDict() {
 	for packageName, templates := range IMPORT {
 		println(packageName, " {")
 		for templateName, template := range templates {
-			println("\t", templateName, " : ", template.file)
+			println("\t", templateName, " : ", template.file, template.name, template.isAccessed)
 		}
 		println("}")
 	}
