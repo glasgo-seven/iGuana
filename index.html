@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="stylesheet" href="./style.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto+Mono&display=swap" rel="stylesheet">
+
+	<title>iGuana - faster HTML</title>
+</head>
+
+<body>
+	<header>
+		<h1 class="title">iGuana</h1>
+		<h4 class="subtitle">Build websites faster with reusable components and a simple templating system designed for HTML developers.</h4>
+		<div class="button_getStarted">Get Started Free</div>
+	</header>
+
+	<div class="content" id="content">
+		<h2>See how it works</h2>
+
+		<div class="row">
+			<div class="code">
+				<span>
+<span class="iguana">{{ template "header" }}</span><br>
+<span class="html">&lt;div class="container"></span><br>
+<span class="html">&emsp;&emsp;&lt;h1></span>Welcome&lt;/h1><br>
+<span class="html">&emsp;&emsp;&lt;p></span>This is a templated page&lt;/p><br>
+<span class="html">&lt;/div></span><br>
+<span class="iguana">{{ template "footer" }}</span>
+				</span>
+			</div>
+			<div class="description">
+				<h4>Basic Template Usage</h4>
+				<p>Simplify your HTML by using templates for common elements like headers and footers. This reduces repetition and makes maintenance easier across your entire site.</p>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="description">
+				<h4>Layout Template System</h4>
+				<p>Create a base layout that all your pages can inherit from. This ensures consistency across your site while keeping your code DRY and maintainable.</p>
+			</div>
+			<div class="code">
+				<span>
+&lt;!-- layout.html --><br>
+&lt;!DOCTYPE html><br>
+&lt;html><br>
+&lt;head><br>
+&emsp;&emsp;{{ template "meta" . }}<br>
+&emsp;&emsp;{{ template "styles" . }}<br>
+&lt;/head><br>
+&lt;body><br>
+&emsp;&emsp;{{ template "header" . }}<br>
+&emsp;&emsp;{{ template "content" . }}<br>
+&emsp;&emsp;{{ template "footer" . }}<br>
+&emsp;&emsp;{{ template "scripts" . }}<br>
+&lt;/body><br>
+&lt;/html>
+</span>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="code">
+				<span>
+&lt;!-- components/card.html --><br>
+{{ define "card" }}<br>
+&lt;div class="card"><br>
+&emsp;&emsp;&lt;img src="{{ .image }}" alt="{{ .title }}"><br>
+&emsp;&emsp;&lt;h3>{{ .title }}&lt;/h3><br>
+&emsp;&emsp;&lt;p>{{ .description }}&lt;/p><br>
+&emsp;&emsp;{{ if .button }}<br>
+&emsp;&emsp;&lt;a href="{{ .button.url }}" class="btn">{{ .button.text }}&lt;/a><br>
+&emsp;&emsp;{{ end }}<br>
+&emsp;&emsp;&lt;/div><br>
+{{ end }}
+</span>
+			</div>
+			<div class="description">
+				<h4>Dynamic Components</h4>
+				<p>Build reusable components with conditional rendering and dynamic data. Perfect for cards, buttons, and other repeatable elements throughout your site.</p>
+			</div>
+		</div>
+	</div>
+
+	<footer>
+		<h2 class="title">Ready to Simplify Your HTML Development?</h2>
+		<h4 class="subtitle">Join thousands of developers who are building better websites, faster.</h4>
+		<div class="button_getStarted">Start Building Now</div>
+	</footer>
+</body>
+
+</html>
