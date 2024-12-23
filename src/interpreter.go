@@ -73,8 +73,6 @@ var (
 	INDENTATION_SYMBOL string = "\t"
 )
 
-// TODO #1 Verify tag syntax
-
 //	Error handler function
 func check(_err error) {
 	if _err != nil {

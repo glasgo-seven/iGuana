@@ -1,0 +1,18 @@
+- [ ] #1 - Untracked circular import
+**Implementation needed**: check for circular imports when calling templates
+- [ ] #2 - Untracked tag misspellings
+**Implementation needed**: check for incorrect spellings of HTML & iHTML tags
+- [ ] #3 - HTML one-liners loose leading '<'
+When assembling final HTML file, leading '<' is lost for all blocks of parent HTML file between iHTML tags
+- [ ] #4 - Error messages
+**Implementation needed**: add valid error messages for possible scenarios
+- [ ] #5 - Package comments omission
+**Implementation needed**: add comment omission while parsing .http files
+- [ ] #6 - Package templates mode tracking
+**Implementation needed**: correct import mode tracking
+- [ ] #7 - Comments & Refactoring
+**Implementation needed**: add meaningfull comments and refactor code for public
+- [ ] #8 - Compile into command line tool
+
+
+All critical issues fixed, ready for a full release!
