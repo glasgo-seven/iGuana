@@ -7,8 +7,9 @@
 	--text:		"Open Sans", serif;
 	--code:		"Roboto Mono", serif;
 
-	--syntax_html:		#e57347;
-	--syntax_iguana:	#579cf1;
+	--syntax_html:		#ee8156;
+	--syntax_comment:	#c4c4c4;
+	--syntax_iguana:	#77adf0;
 
 	/* --text:		'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 	--code:		'Courier New', Courier, monospace; */
@@ -88,6 +89,8 @@ footer .title {
 	border-radius: 8px;
 
 	background-color: var(--black);
+
+	white-space: pre;
 }
 .code span {
 	font-family: var(--code);
@@ -97,6 +100,9 @@ span.html {
 	color: var(--syntax_html);
 }
 span.iguana {
+	color: var(--syntax_iguana);
+}
+span.comment {
 	color: var(--syntax_iguana);
 }
 

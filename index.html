@@ -25,11 +25,11 @@
 		<div class="row">
 			<div class="code">
 				<span>
-<span class="iguana">{{ template "header" }}</span><br>
-<span class="html">&lt;div class="container"></span><br>
-<span class="html">&emsp;&emsp;&lt;h1></span>Welcome&lt;/h1><br>
-<span class="html">&emsp;&emsp;&lt;p></span>This is a templated page&lt;/p><br>
-<span class="html">&lt;/div></span><br>
+<span class="iguana">{{ template "header" }}</span>
+<span class="html">&lt;div class="container"></span>
+<span class="html">    &lt;h1></span>Welcome<span class="html">&lt;/h1></span>
+<span class="html">    &lt;p></span>This is a templated page<span class="html">&lt;/p></span>
+<span class="html">&lt;/div></span>
 <span class="iguana">{{ template "footer" }}</span>
 				</span>
 			</div>
@@ -46,20 +46,20 @@
 			</div>
 			<div class="code">
 				<span>
-&lt;!-- layout.html --><br>
-&lt;!DOCTYPE html><br>
-&lt;html><br>
-&lt;head><br>
-&emsp;&emsp;{{ template "meta" . }}<br>
-&emsp;&emsp;{{ template "styles" . }}<br>
-&lt;/head><br>
-&lt;body><br>
-&emsp;&emsp;{{ template "header" . }}<br>
-&emsp;&emsp;{{ template "content" . }}<br>
-&emsp;&emsp;{{ template "footer" . }}<br>
-&emsp;&emsp;{{ template "scripts" . }}<br>
-&lt;/body><br>
-&lt;/html>
+<span class="comment">&lt;!-- layout.html --></span>
+<span class="html">&lt;!DOCTYPE html></span>
+<span class="html">&lt;html></span>
+<span class="html">&lt;head></span>
+<span class="iguana">    {{ template "meta" . }}</span>
+<span class="iguana">    {{ template "styles" . }}</span>
+<span class="html">&lt;/head></span>
+<span class="html">&lt;body></span>
+<span class="iguana">    {{ template "header" . }}</span>
+<span class="iguana">    {{ template "content" . }}</span>
+<span class="iguana">    {{ template "footer" . }}</span>
+<span class="iguana">    {{ template "scripts" . }}</span>
+<span class="html">&lt;/body></span>
+<span class="html">&lt;/html></span>
 </span>
 			</div>
 		</div>
@@ -67,17 +67,21 @@
 		<div class="row">
 			<div class="code">
 				<span>
-&lt;!-- components/card.html --><br>
-{{ define "card" }}<br>
-&lt;div class="card"><br>
-&emsp;&emsp;&lt;img src="{{ .image }}" alt="{{ .title }}"><br>
-&emsp;&emsp;&lt;h3>{{ .title }}&lt;/h3><br>
-&emsp;&emsp;&lt;p>{{ .description }}&lt;/p><br>
-&emsp;&emsp;{{ if .button }}<br>
-&emsp;&emsp;&lt;a href="{{ .button.url }}" class="btn">{{ .button.text }}&lt;/a><br>
-&emsp;&emsp;{{ end }}<br>
-&emsp;&emsp;&lt;/div><br>
-{{ end }}
+<span class="comment">&lt;!-- components/card.html --></span>
+<span class="iguana">{{ define "card" }}</span>
+<span class="html">&lt;div class="card"></span>
+<span class="html">    &lt;img src="<span class="iguana">{{ .image }}</span>"
+         alt="<span class="iguana">{{ .title }}</span>"></span>
+<span class="html">    &lt;h3><span class="iguana">{{ .title }}</span>&lt;/h3></span>
+<span class="html">    &lt;p><span class="iguana">{{ .description }}</span>&lt;/p></span>
+    <span class="iguana">{{ if .button }}</span>
+    <span class="html">&lt;a href="<span class="iguana">{{ .button.url }}</span>"
+       class="btn">
+            <span class="iguana">{{ .button.text }}</span>
+    &lt;/a></span>
+    <span class="iguana">{{ end }}</span>
+<span class="html">&lt;/div></span>
+<span class="iguana">{{ end }}</span>
 </span>
 			</div>
 			<div class="description">
