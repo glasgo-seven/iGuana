@@ -1,0 +1,122 @@
+<body>
+	<nav>
+		<a href="https://glasgo-seven.github.io/iGuana/">
+			<i class="fa-solid fa-house" alt="Home"></i>
+			<p>Home</p>
+		</a>
+		<a href="https://github.com/glasgo-seven/iGuana/wiki">
+			<i class="fa-solid fa-file" alt="Docs"></i>
+			<p>Docs</p>
+		</a>
+		<a href="https://glasgo-seven.github.io/">
+			<i class="fa-solid fa-circle-info" alt="About"></i>
+			<p>About</p>
+		</a>
+	</nav>
+
+	<header>
+		<h1 class="title">iGuana</h1>
+		<h4 class="subtitle">Build websites faster with reusable components and a simple templating system designed for HTML developers.</h4>
+		<div class="button_getStarted">
+			<a href="https://github.com/glasgo-seven/iGuana/releases">Get Started Free</a>
+		</div>
+	</header>
+
+	<div class="content" id="content">
+		<!-- <h2>See how it works</h2> -->
+
+		<!-- <div class="side"></div> -->
+		<div class="middle">
+		<div class="row accent">
+			<div class="code">
+				<span>
+<span class="iguana">{{ template "header" }}</span>
+<span class="html">&lt;div class="container"></span>
+<span class="html">    &lt;h1></span>Welcome<span class="html">&lt;/h1></span>
+<span class="html">    &lt;p></span>This is a templated page<span class="html">&lt;/p></span>
+<span class="html">&lt;/div></span>
+<span class="iguana">{{ template "footer" }}</span>
+				</span>
+			</div>
+			<div class="description">
+				<h2>Basic Template Usage</h4>
+				<p>Simplify your HTML by using templates for common elements like headers and footers. This reduces repetition and makes maintenance easier across your entire site.</p>
+			</div>
+		</div>
+
+		<div class="row usual">
+			<div class="description">
+				<h2>Layout Template System</h4>
+				<p>Create a base layout that all your pages can inherit from. This ensures consistency across your site while keeping your code DRY and maintainable.</p>
+			</div>
+			<div class="code">
+				<span>
+<span class="comment">&lt;!-- layout.html --></span>
+<span class="html">&lt;!DOCTYPE html></span>
+<span class="html">&lt;html></span>
+<span class="html">&lt;head></span>
+<span class="iguana">    {{ template "meta" . }}</span>
+<span class="iguana">    {{ template "styles" . }}</span>
+<span class="html">&lt;/head></span>
+<span class="html">&lt;body></span>
+<span class="iguana">    {{ template "header" . }}</span>
+<span class="iguana">    {{ template "content" . }}</span>
+<span class="iguana">    {{ template "footer" . }}</span>
+<span class="iguana">    {{ template "scripts" . }}</span>
+<span class="html">&lt;/body></span>
+<span class="html">&lt;/html></span>
+</span>
+			</div>
+		</div>
+
+		<div class="row accent">
+			<div class="code">
+				<span>
+<span class="comment">&lt;!-- components/card.html --></span>
+<span class="iguana">{{ define "card" }}</span>
+<span class="html">&lt;div class="card"></span>
+<span class="html">    &lt;img src="<span class="iguana">{{ .image }}</span>"
+         alt="<span class="iguana">{{ .title }}</span>"></span>
+<span class="html">    &lt;h3><span class="iguana">{{ .title }}</span>&lt;/h3></span>
+<span class="html">    &lt;p><span class="iguana">{{ .description }}</span>&lt;/p></span>
+    <span class="iguana">{{ if .button }}</span>
+    <span class="html">&lt;a href="<span class="iguana">{{ .button.url }}</span>"
+       class="btn">
+            <span class="iguana">{{ .button.text }}</span>
+    &lt;/a></span>
+    <span class="iguana">{{ end }}</span>
+<span class="html">&lt;/div></span>
+<span class="iguana">{{ end }}</span>
+</span>
+			</div>
+			<div class="description">
+				<h2>Dynamic Components</h4>
+				<p>Build reusable components with conditional rendering and dynamic data. Perfect for cards, buttons, and other repeatable elements throughout your site.</p>
+			</div>
+		</div>
+		</div>
+		<!-- <div class="side"></div> -->
+	</div>
+
+	<footer>
+		<h2 class="title">Ready to Simplify Your HTML Development?</h2>
+		<h4 class="subtitle">Join thousands of developers who are building better websites, faster.</h4>
+		<div class="button_getStarted">
+			<a href="https://github.com/glasgo-seven/iGuana/releases">Start Building Now</a>
+		</div>
+		<hr>
+		<nav>
+			<a href="https://t.me/glasgo_seven" target="_blank">
+				<i class="fa-solid fa-paper-plane" alt="Telegram"></i>
+			</a>
+			<a href="antipov.dimitry.s@yandex.ru" target="_blank">
+				<i class="fa-solid fa-envelope" alt="Email"></i>
+			</a>
+			<a href="https://github.com/glasgo-seven" target="_blank">
+				<i class="fa-brands fa-github" alt="GitHub"></i>
+			</a>
+		</nav>
+		Hosted on GitHub Pages<br>
+		Copyright © glasgo-seven 2024
+	</footer>
+</body>
