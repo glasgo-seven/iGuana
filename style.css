@@ -32,6 +32,42 @@
 html {
 	/* background-color: var(--white); */
 }
+
+a {
+	cursor: pointer;
+	text-decoration: none;
+	color: var(--black);
+}
+
+nav {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+
+	padding: 20px;
+
+	background-color: var(--white);
+}
+nav a {
+	margin: 0 80px;
+	display: flex;
+	flex-direction: column;
+	
+}
+nav a p {
+	margin-top: 8px;
+	color: var(--gray);
+}
+nav a i {
+	/* box-shadow: 0px 0px 24px -8px var(--gray); */
+	font-size: 34px;
+	color: var(--main);
+}
+nav a:hover p {
+	transition: .5s;
+	color: var(--main);
+}
+
 header, footer {
 	padding: 70px 20px;
 }
@@ -40,8 +76,8 @@ header *, footer * {
 }
 footer {
 	background-color: var(--black);
+	color: var(--gray);
 }
-
 header .title {
 	font-size: 100px;
 	color: var(--main);
@@ -50,6 +86,15 @@ footer .title {
 	font-size: 26px;
 	color: var(--white);
 }
+footer hr {
+	margin: 60px auto 0 auto;
+	width: 60%;
+	border-color: var(--gray);
+}
+footer nav {
+	background-color: inherit;
+}
+
 
 
 .subtitle {
@@ -65,22 +110,62 @@ footer .title {
 	padding: 8px 22px;
 
 	background-color: var(--main);
+	color: var(--black);
 
 	border: 0px solid;
 	border-radius: 10px;
 }
 
+/* div.content {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+}
+div.side {
+	width: 20%;
+}
+div.middle {
+	width: 60%;
+} */
+
+
 .row {
 	display: flex;
 
-	margin: 70px 40px;
+	padding: 40px 20%;
 }
-.row .description, .row .code {
+.row.accent {
+	background-color: var(--white);
+	
+}
+.description {
+	width: 60%;
+	padding: 40px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+.description p {
+	font-size: 18px;
+	min-width: 200px;
+}
+.row.usual .description * {
+	padding-left: 30%;
+	text-align: right;
+	margin: 10px 0;
+}
+.row.accent .description * {
+	padding-right: 30%;
+	text-align: left;
+	margin: 10px 0;
+}
+.row .code {
 	display: inline-block;
 	text-align: left;
 }
 .code {
 	width: 40%;
+	min-width: fit-content;
 
 	padding: 20px;
 
@@ -103,11 +188,6 @@ span.iguana {
 	color: var(--syntax_iguana);
 }
 span.comment {
-	color: var(--syntax_iguana);
+	color: var(--syntax_comment);
 }
 
-.description {
-	width: 60%;
-	
-	padding: 20px;
-}
