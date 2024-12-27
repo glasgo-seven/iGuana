@@ -1,0 +1,17 @@
+@media screen and (max-width: 900px) {
+	nav {
+		padding: 2% 15%;
+	
+		background-color: var(--accent);
+	}
+	
+	header, footer {
+		padding: 16vw 4vw;
+	}
+
+	footer hr {
+		margin: 10vw auto 4vw auto;
+		width: 60%;
+		border-color: var(--gray);
+	}
+}

@@ -1,0 +1,80 @@
+@media screen and (max-width: 900px) {
+	.nav_icon {
+		font-size: 5vw;
+		color: var(--main);
+	}
+	.nav_label {
+		margin-top: 1vw;
+		font-size: 3.5vw;
+		color: var(--gray);
+	}
+	.nav_element:hover .nav_label {
+		transition: .5s;
+		color: var(--main);
+	}
+
+
+	header .title {
+		font-size: 20vw;
+		color: var(--main);
+	}
+	footer .title {
+		font-size: 8vw;
+		color: var(--white);
+	}
+	.subtitle {
+		margin: 12vw 4vw 20vw 4vw;
+		font-size: 6vw;
+		color: var(--gray);
+	}
+	.button_getStarted {
+		max-width: fit-content;
+
+		margin: auto;
+		padding: 2vw 4vw;
+
+		background-color: var(--main);
+		color: var(--black);
+
+		border: 0 solid;
+		border-radius: .5em;
+
+		font-size: 4vw;
+	}
+	.copyright {
+		margin: 3vw;
+	}
+
+
+	.example {
+		padding: 1% 2%;
+
+		flex-wrap: wrap;
+		gap: 2vw;
+	}
+
+
+
+	.code_block {
+		/* width: 40%; */
+		min-width: 80%;
+		/* min-width: 100%; */
+
+		/* max-height: fit-content; */
+
+		padding: 1.5em;
+
+		border-radius: .5em;
+
+		background-color: var(--black);
+
+		/* white-space: pre; */
+
+		font-size: 4vw;
+	}
+	.code {
+		font-family: var(--code);
+		color: var(--white);
+	}
+	
+}

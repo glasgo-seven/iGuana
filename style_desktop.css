@@ -1,0 +1,165 @@
+@media screen and (min-width: 900px){
+	* {
+		text-align: center;
+	}
+
+	nav {
+		padding: 20px;
+	
+		background-color: var(--accent);
+	}
+
+	header, footer {
+		padding: 70px 20px;
+	}
+	footer hr {
+		margin: 60px auto 0 auto;
+		width: 60%;
+		border-color: var(--gray);
+	}
+	
+
+
+	/* nav a {
+		margin: 0 80px;
+		display: flex;
+		flex-direction: column;
+		
+	} */
+	.nav_icon {
+		font-size: 34px;
+		color: var(--main);
+	}
+	.nav_label {
+		margin-top: 8px;
+		color: var(--gray);
+	}
+	.nav_element:hover .nav_label {
+		transition: .5s;
+		color: var(--main);
+	}
+
+	header .title {
+		font-size: 160px;
+		color: var(--main);
+	}
+	footer .title {
+		font-size: 26px;
+		color: var(--white);
+	}
+
+	.subtitle {
+		margin: 28px 12px 40px 12px;
+		font-size: 26px;
+		color: var(--gray);
+	}
+
+	.button_getStarted {
+		max-width: fit-content;
+
+		margin: auto;
+		padding: 8px 22px;
+
+		background-color: var(--main);
+		color: var(--black);
+
+		border: 0px solid;
+		border-radius: 10px;
+
+		/* font-size: 4vw; */
+	}
+	
+	.button_getStarted:hover {
+		transition: 1s;
+		/* box-shadow: 0px 0px 16px 6px var(--main_sh); */
+		box-shadow: 0px 0px 16px 10px var(--main_sh) inset;
+	}
+
+	/* div.content {
+		width: 100%;
+		display: flex;
+		flex-direction: row;
+	}
+	div.side {
+		width: 20%;
+	}
+	div.middle {
+		width: 60%;
+	} */
+
+
+	/* .row {
+		display: flex;
+
+		padding: 40px 20%;
+	}
+	.row.accent {
+		background-color: var(--white);
+		
+	} */
+	
+	.description {
+		width: 60%;
+		padding: 40px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+	.description_title {
+		font-size: 22px;
+		min-width: 200px;
+		text-align: left;
+	}
+	.description_text {
+		text-align: left;
+	}
+
+	.example {
+		margin: 0 20%;
+		padding: 2% 12%;
+	}
+	.description_text {
+		margin-top: 10px;
+	}
+	/* .example * {
+		padding-right: 30%;
+		text-align: left;
+		margin: 10px 0;
+	} */
+	/* .row .code {
+		display: inline-block;
+		text-align: left;
+	} */
+
+
+
+
+	.code_block {
+		width: 30%;
+		min-width: fit-content;
+
+		padding: 20px;
+
+		font-size: 18px;
+
+		border-radius: 8px;
+
+		background-color: var(--black);
+
+		/* white-space: pre; */
+	}
+	.code {
+		font-family: var(--code);
+		color: var(--white);
+	}
+	/* span.html {
+		color: var(--syntax_html);
+	}
+	span.iguana {
+		color: var(--syntax_iguana);
+	}
+	span.comment {
+		color: var(--syntax_comment);
+	} */
+
+}

@@ -1,0 +1,94 @@
+:root {
+	/* --main:		#EEAA44; */
+	--main:		#5fa332;
+	--black:	#404040;
+	--gray:		#AFAFAF;
+	--white:	#F0F0F0;
+	--accent:	#f3f7f1;
+
+	--text:		"Open Sans", serif;
+	--code:		"Roboto Mono", serif;
+
+	--syntax_html:		#ee8156;
+	--syntax_comment:	#c4c4c4;
+	--syntax_iguana:	#77adf0;
+}
+
+* {
+	font-family: var(--text);
+
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	/* background-color: var(--white); */
+}
+a {
+	cursor: pointer;
+	text-decoration: none;
+	color: var(--white);
+}
+footer {
+	margin-top: 20px;
+	background-color: var(--black);
+	color: var(--gray);
+}
+footer nav {
+	background-color: inherit;
+}
+
+
+.as_column, .as_row {
+	display: flex;
+}
+.as_column {
+	flex-direction: column;
+}
+.as_row {
+	flex-direction: row;
+}
+
+
+.content_align_center {
+	justify-items: center;
+}
+
+
+.text_align_center {
+	text-align: center;
+}
+.text_align_left {
+	text-align: left;
+}
+.text_align_right {
+	text-align: right;
+}
+
+
+.nav_element {
+	width: 20%;
+	margin: 0 8%;
+}
+
+
+.accent_row {
+	background-color: var(--accent);
+	border-radius: 8px;
+}
+
+
+
+
+span.html {
+	font-family: var(--code);
+	color: var(--syntax_html);
+}
+span.iguana {
+	font-family: var(--code);
+	color: var(--syntax_iguana);
+}
+span.comment {
+	font-family: var(--code);
+	color: var(--syntax_comment);
+}

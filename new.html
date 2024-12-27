@@ -12,9 +12,10 @@
 
 	<link rel="icon" type="image/svg+xml" href="./images/hand-lizard-solid.svg">
 
-	<link rel="stylesheet" href="./style_tag.css">
-	<link rel="stylesheet" href="./style_class.css">
-	<!-- <link rel="stylesheet" href="./style.css"> -->
+	<link rel="stylesheet" href="./style_mobile_tag.css">
+	<link rel="stylesheet" href="./style_mobile_class.css">
+	<link rel="stylesheet" href="./style_desktop.css">
+	<link rel="stylesheet" href="./style_common.css">
 
 	<title>iGuana - faster HTML</title>
 </head>
@@ -44,20 +45,69 @@
 	</header>
 
 	<main class="as_column">
-		<div class="example as_row content_align_center">
+		<div class="example as_row content_align_center accent_row">
 			<div class="code_block text_align_left">
 				<span class="code">
-<span class="iguana">{{ template "header" }}</span><br>
-<span class="html">&lt;div class="container"></span><br>
-<span class="html">    &lt;h1></span>Welcome<span class="html">&lt;/h1></span><br>
-<span class="html">    &lt;p></span>This is a templated page<span class="html">&lt;/p></span><br>
-<span class="html">&lt;/div></span><br>
-<span class="iguana">{{ template "footer" }}</span>
+					<span class="iguana">{{ template "header" }}</span><br>
+					<span class="html">&lt;div class="container"></span><br>
+					<span class="html">    &lt;h1></span>Welcome<span class="html">&lt;/h1></span><br>
+					<span class="html">    &lt;p></span>This is a templated page<span class="html">&lt;/p></span><br>
+					<span class="html">&lt;/div></span><br>
+					<span class="iguana">{{ template "footer" }}</span>
 				</span>
 			</div>
 			<div class="description text_align_left">
 				<h2 class="description_title">Basic Template Usage</h2>
 				<p class="description_text">Simplify your HTML by using templates for common elements like headers and footers. This reduces repetition and makes maintenance easier across your entire site.</p>
+			</div>
+		</div>
+
+		<div class="example as_row content_align_center">
+			<div class="code_block text_align_left">
+				<span class="code">
+					<span class="comment">&lt;!-- layout.html --></span><br>
+					<span class="html">&lt;!DOCTYPE html></span><br>
+					<span class="html">&lt;html></span><br>
+					<span class="html">&lt;head></span><br>
+					<span class="iguana">&nbsp;&nbsp;{{ template "meta" . }}</span><br>
+					<span class="iguana">&nbsp;&nbsp;{{ template "styles" . }}</span><br>
+					<span class="html">&lt;/head></span><br>
+					<span class="html">&lt;body></span><br>
+					<span class="iguana">&nbsp;&nbsp;{{ template "header" . }}</span><br>
+					<span class="iguana">&nbsp;&nbsp;{{ template "content" . }}</span><br>
+					<span class="iguana">&nbsp;&nbsp;{{ template "footer" . }}</span><br>
+					<span class="iguana">&nbsp;&nbsp;{{ template "scripts" . }}</span><br>
+					<span class="html">&lt;/body></span><br>
+					<span class="html">&lt;/html></span><br>
+				</span>
+			</div>
+			<div class="description text_align_left">
+				<h2 class="description_title">Layout Template System</h2>
+				<p class="description_text">Create a base layout that all your pages can inherit from. This ensures consistency across your site while keeping your code DRY and maintainable.</p>
+			</div>
+		</div>
+
+		<div class="example as_row content_align_center accent_row">
+			<div class="code_block text_align_left">
+				<span class="code">
+					<span class="comment">&lt;!-- components/card.html --></span><br>
+					<span class="iguana">{{ define "card" }}</span><br>
+					<span class="html">&lt;div class="card"></span><br>
+					&nbsp;&nbsp;<span class="html">&lt;img src="<span class="iguana">{{ .image }}</span>" alt="<span class="iguana">{{ .title }}</span>"></span><br>
+					&nbsp;&nbsp;<span class="html">&lt;h3><span class="iguana">{{ .title }}</span>&lt;/h3></span><br>
+					&nbsp;&nbsp;<span class="html">&lt;p><span class="iguana">{{ .description }}</span>&lt;/p></span><br>
+					&nbsp;&nbsp;<span class="iguana">{{ if .button }}</span><br>
+					&nbsp;&nbsp;&nbsp;&nbsp;<span class="html">&lt;a href="<span class="iguana">{{ .button.url }}</span>" class="btn"><br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="iguana">{{ .button.text }}</span><br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&lt;/a></span><br>
+					&nbsp;&nbsp;<span class="iguana">{{ end }}</span><br>
+					<span class="html">&lt;/div></span><br>
+					<span class="iguana">{{ end }}</span><br>
+				</span>
+			</div>
+			<div class="description text_align_left">
+				<h2 class="description_title">Dynamic Components</h2>
+				<p class="description_text">Build reusable components with conditional rendering and dynamic data. Perfect for cards, buttons, and other repeatable elements throughout your site.</p>
 			</div>
 		</div>
 	</main>
