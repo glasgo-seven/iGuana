@@ -78,4 +78,9 @@ There are also new tags:
 </html>
 ```
 
+**Terminal**
+```console
+user@host:~$ iguana project.html index.html
+```
+
 ---
