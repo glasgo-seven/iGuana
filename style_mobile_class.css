@@ -48,9 +48,27 @@
 
 	.example {
 		padding: 1% 2%;
+		margin: 2% 2%;
 
 		flex-wrap: wrap;
 		gap: 2vw;
+	}
+
+	.description {
+		width: 60%;
+		padding: 8vw;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+	.description_title {
+		font-size: 4vw;
+		min-width: 40vw;
+		text-align: left;
+	}
+	.description_text {
+		text-align: left;
+		margin-top: 3vw;
 	}
 
 
@@ -70,7 +88,7 @@
 
 		/* white-space: pre; */
 
-		font-size: 4vw;
+		font-size: 3vw;
 	}
 	.code {
 		font-family: var(--code);

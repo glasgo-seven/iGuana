@@ -135,7 +135,7 @@
 
 
 	.code_block {
-		width: 30%;
+		/* width: 100%; */
 		min-width: fit-content;
 
 		padding: 20px;

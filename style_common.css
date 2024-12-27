@@ -1,6 +1,6 @@
 :root {
 	/* --main:		#EEAA44; */
-	--main:		#5fa332;
+	--main:		#5FA332;
 	--black:	#404040;
 	--gray:		#AFAFAF;
 	--white:	#F0F0F0;
@@ -11,7 +11,10 @@
 
 	--syntax_html:		#ee8156;
 	--syntax_comment:	#c4c4c4;
-	--syntax_iguana:	#77adf0;
+	--syntax_iguana:	#95da67;
+
+	--iguana_accent:	#488023;
+	/* --syntax_iguana:	#77adf0; */
 }
 
 * {
@@ -30,7 +33,7 @@ a {
 	color: var(--white);
 }
 footer {
-	margin-top: 20px;
+	margin-top: 2%;
 	background-color: var(--black);
 	color: var(--gray);
 }
@@ -87,6 +90,10 @@ span.html {
 span.iguana {
 	font-family: var(--code);
 	color: var(--syntax_iguana);
+}
+span.iguana_accent {
+	font-family: var(--code);
+	color: var(--iguana_accent);
 }
 span.comment {
 	font-family: var(--code);

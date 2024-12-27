@@ -48,73 +48,55 @@
 		<div class="example as_row content_align_center accent_row">
 			<div class="code_block text_align_left">
 				<span class="code">
-					<span class="iguana">{{ template "header" }}</span><br>
-					<span class="html">&lt;div class="container"></span><br>
-					<span class="html">    &lt;h1></span>Welcome<span class="html">&lt;/h1></span><br>
-					<span class="html">    &lt;p></span>This is a templated page<span class="html">&lt;/p></span><br>
+					<span class="iguana">&lt;require template='template_A.htt' /></span><br>
+					<span class="html">&lt;div></span><br>
+					&nbsp;&nbsp;<span class="html">&lt;h1>Hello World!&lt;/h1></span><br>
+					&nbsp;&nbsp;<span class="iguana">&lt;call template='templateA' /></span><br>
 					<span class="html">&lt;/div></span><br>
-					<span class="iguana">{{ template "footer" }}</span>
 				</span>
 			</div>
 			<div class="description text_align_left">
-				<h2 class="description_title">Basic Template Usage</h2>
-				<p class="description_text">Simplify your HTML by using templates for common elements like headers and footers. This reduces repetition and makes maintenance easier across your entire site.</p>
+				<h2 class="description_title">Make your own Templates - .htt files!</h2>
+				<p class="description_text">Put your HTML blocks into separate files with <span class="iguana_accent">.htt</span> extension and reuse them.</p>
 			</div>
 		</div>
 
 		<div class="example as_row content_align_center">
 			<div class="code_block text_align_left">
 				<span class="code">
-					<span class="comment">&lt;!-- layout.html --></span><br>
-					<span class="html">&lt;!DOCTYPE html></span><br>
-					<span class="html">&lt;html></span><br>
-					<span class="html">&lt;head></span><br>
-					<span class="iguana">&nbsp;&nbsp;{{ template "meta" . }}</span><br>
-					<span class="iguana">&nbsp;&nbsp;{{ template "styles" . }}</span><br>
-					<span class="html">&lt;/head></span><br>
-					<span class="html">&lt;body></span><br>
-					<span class="iguana">&nbsp;&nbsp;{{ template "header" . }}</span><br>
-					<span class="iguana">&nbsp;&nbsp;{{ template "content" . }}</span><br>
-					<span class="iguana">&nbsp;&nbsp;{{ template "footer" . }}</span><br>
-					<span class="iguana">&nbsp;&nbsp;{{ template "scripts" . }}</span><br>
-					<span class="html">&lt;/body></span><br>
-					<span class="html">&lt;/html></span><br>
+					[PackageName]<br>
+					<span class="comment">// Silenced, can be accessed only by other templates</span><br>
+					<span class="iguana">~</span> template_A.htt [PackageName]<br>
+					<br>
+					<span class="comment">// Usual import</span><br>
+					<span class="iguana">+</span> template_B.htt [HelloWorld]<br>
+					<br>
+					<span class="comment">// Permanent exclusion</span><br>
+					<span class="iguana">!</span> template_C.htt []<br>
 				</span>
 			</div>
 			<div class="description text_align_left">
-				<h2 class="description_title">Layout Template System</h2>
-				<p class="description_text">Create a base layout that all your pages can inherit from. This ensures consistency across your site while keeping your code DRY and maintainable.</p>
+				<h2 class="description_title">Build your own template packages!</h2>
+				<p class="description_text">Create a <span class="iguana_accent">.http</span> file and store links to all your templates. Use package file to import and use all the templates.</p>
 			</div>
 		</div>
 
 		<div class="example as_row content_align_center accent_row">
 			<div class="code_block text_align_left">
 				<span class="code">
-					<span class="comment">&lt;!-- components/card.html --></span><br>
-					<span class="iguana">{{ define "card" }}</span><br>
-					<span class="html">&lt;div class="card"></span><br>
-					&nbsp;&nbsp;<span class="html">&lt;img src="<span class="iguana">{{ .image }}</span>" alt="<span class="iguana">{{ .title }}</span>"></span><br>
-					&nbsp;&nbsp;<span class="html">&lt;h3><span class="iguana">{{ .title }}</span>&lt;/h3></span><br>
-					&nbsp;&nbsp;<span class="html">&lt;p><span class="iguana">{{ .description }}</span>&lt;/p></span><br>
-					&nbsp;&nbsp;<span class="iguana">{{ if .button }}</span><br>
-					&nbsp;&nbsp;&nbsp;&nbsp;<span class="html">&lt;a href="<span class="iguana">{{ .button.url }}</span>" class="btn"><br>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="iguana">{{ .button.text }}</span><br>
-					&nbsp;&nbsp;&nbsp;&nbsp;&lt;/a></span><br>
-					&nbsp;&nbsp;<span class="iguana">{{ end }}</span><br>
-					<span class="html">&lt;/div></span><br>
-					<span class="iguana">{{ end }}</span><br>
+					<span class="html">user@host:~$</span> <span class="iguana">iguana</span> project.html index.html
 				</span>
 			</div>
 			<div class="description text_align_left">
-				<h2 class="description_title">Dynamic Components</h2>
-				<p class="description_text">Build reusable components with conditional rendering and dynamic data. Perfect for cards, buttons, and other repeatable elements throughout your site.</p>
+				<h2 class="description_title">Compile templates into single file!</h2>
+				<p class="description_text">Use our open-source <span class="iguana_accent">iguana</span> interpreter written in Go to compile your file with templates into regular HTML file.</p>
 			</div>
 		</div>
 	</main>
 
 	<footer class="as_column text_align_center">
 		<h2 class="title">Ready to Simplify Your HTML Development?</h2>
-		<h4 class="subtitle">Join thousands of developers who are building better websites, faster.</h4>
+		<h4 class="subtitle">Join developers who are building better websites even faster.</h4>
 		<div class="button_getStarted">
 			<a href="https://github.com/glasgo-seven/iGuana/releases">Start Building Now</a>
 		</div>
