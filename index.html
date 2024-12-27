@@ -12,30 +12,31 @@
 
 	<link rel="icon" type="image/svg+xml" href="./images/hand-lizard-solid.svg">
 
-	<!-- <link rel="stylesheet" href="./style_tag.css"> -->
-	<!-- <link rel="stylesheet" href="./style_class.css"> -->
-	<link rel="stylesheet" href="./style.css">
+	<link rel="stylesheet" href="./style_mobile_tag.css">
+	<link rel="stylesheet" href="./style_mobile_class.css">
+	<link rel="stylesheet" href="./style_desktop.css">
+	<link rel="stylesheet" href="./style_common.css">
 
 	<title>iGuana - faster HTML</title>
 </head>
 
-<body>
-	<nav>
-		<a href="https://glasgo-seven.github.io/iGuana/">
-			<i class="fa-solid fa-house" alt="Home"></i>
-			<p>Home</p>
+<body class="as_column">
+	<nav class="as_row">
+		<a class="nav_element as_column text_align_center" href="https://glasgo-seven.github.io/iGuana/">
+			<i class="nav_icon fa-solid fa-house" alt="Home"></i>
+			<p class="nav_label">Home</p>
 		</a>
-		<a href="https://github.com/glasgo-seven/iGuana/wiki">
-			<i class="fa-solid fa-file" alt="Docs"></i>
-			<p>Docs</p>
+		<a class="nav_element as_column text_align_center" href="https://github.com/glasgo-seven/iGuana/wiki">
+			<i class="nav_icon fa-solid fa-file" alt="Docs"></i>
+			<p class="nav_label">Docs</p>
 		</a>
-		<a href="https://glasgo-seven.github.io/">
-			<i class="fa-solid fa-circle-info" alt="About"></i>
-			<p>About</p>
+		<a class="nav_element as_column text_align_center" href="https://glasgo-seven.github.io/">
+			<i class="nav_icon fa-solid fa-circle-info" alt="About"></i>
+			<p class="nav_label">About</p>
 		</a>
 	</nav>
 
-	<header>
+	<header class="as_column text_align_center">
 		<h1 class="title">iGuana</h1>
 		<h4 class="subtitle">Build websites faster with reusable components and a simple templating system designed for HTML developers.</h4>
 		<div class="button_getStarted">
@@ -43,102 +44,96 @@
 		</div>
 	</header>
 
-	<div class="content" id="content">
-		<!-- <h2>See how it works</h2> -->
-
-		<!-- <div class="side"></div> -->
-		<div class="middle">
-		<div class="row accent">
-			<div class="code">
-				<span>
-<span class="iguana">{{ template "header" }}</span>
-<span class="html">&lt;div class="container"></span>
-<span class="html">    &lt;h1></span>Welcome<span class="html">&lt;/h1></span>
-<span class="html">    &lt;p></span>This is a templated page<span class="html">&lt;/p></span>
-<span class="html">&lt;/div></span>
-<span class="iguana">{{ template "footer" }}</span>
+	<main class="as_column">
+		<div class="example as_row content_align_center accent_row">
+			<div class="code_block text_align_left">
+				<span class="code">
+					<span class="iguana">{{ template "header" }}</span><br>
+					<span class="html">&lt;div class="container"></span><br>
+					<span class="html">    &lt;h1></span>Welcome<span class="html">&lt;/h1></span><br>
+					<span class="html">    &lt;p></span>This is a templated page<span class="html">&lt;/p></span><br>
+					<span class="html">&lt;/div></span><br>
+					<span class="iguana">{{ template "footer" }}</span>
 				</span>
 			</div>
-			<div class="description">
-				<h2>Basic Template Usage</h4>
-				<p>Simplify your HTML by using templates for common elements like headers and footers. This reduces repetition and makes maintenance easier across your entire site.</p>
+			<div class="description text_align_left">
+				<h2 class="description_title">Basic Template Usage</h2>
+				<p class="description_text">Simplify your HTML by using templates for common elements like headers and footers. This reduces repetition and makes maintenance easier across your entire site.</p>
 			</div>
 		</div>
 
-		<div class="row usual">
-			<div class="description">
-				<h2>Layout Template System</h4>
-				<p>Create a base layout that all your pages can inherit from. This ensures consistency across your site while keeping your code DRY and maintainable.</p>
+		<div class="example as_row content_align_center">
+			<div class="code_block text_align_left">
+				<span class="code">
+					<span class="comment">&lt;!-- layout.html --></span><br>
+					<span class="html">&lt;!DOCTYPE html></span><br>
+					<span class="html">&lt;html></span><br>
+					<span class="html">&lt;head></span><br>
+					<span class="iguana">&nbsp;&nbsp;{{ template "meta" . }}</span><br>
+					<span class="iguana">&nbsp;&nbsp;{{ template "styles" . }}</span><br>
+					<span class="html">&lt;/head></span><br>
+					<span class="html">&lt;body></span><br>
+					<span class="iguana">&nbsp;&nbsp;{{ template "header" . }}</span><br>
+					<span class="iguana">&nbsp;&nbsp;{{ template "content" . }}</span><br>
+					<span class="iguana">&nbsp;&nbsp;{{ template "footer" . }}</span><br>
+					<span class="iguana">&nbsp;&nbsp;{{ template "scripts" . }}</span><br>
+					<span class="html">&lt;/body></span><br>
+					<span class="html">&lt;/html></span><br>
+				</span>
 			</div>
-			<div class="code">
-				<span>
-<span class="comment">&lt;!-- layout.html --></span>
-<span class="html">&lt;!DOCTYPE html></span>
-<span class="html">&lt;html></span>
-<span class="html">&lt;head></span>
-<span class="iguana">    {{ template "meta" . }}</span>
-<span class="iguana">    {{ template "styles" . }}</span>
-<span class="html">&lt;/head></span>
-<span class="html">&lt;body></span>
-<span class="iguana">    {{ template "header" . }}</span>
-<span class="iguana">    {{ template "content" . }}</span>
-<span class="iguana">    {{ template "footer" . }}</span>
-<span class="iguana">    {{ template "scripts" . }}</span>
-<span class="html">&lt;/body></span>
-<span class="html">&lt;/html></span>
-</span>
+			<div class="description text_align_left">
+				<h2 class="description_title">Layout Template System</h2>
+				<p class="description_text">Create a base layout that all your pages can inherit from. This ensures consistency across your site while keeping your code DRY and maintainable.</p>
 			</div>
 		</div>
 
-		<div class="row accent">
-			<div class="code">
-				<span>
-<span class="comment">&lt;!-- components/card.html --></span>
-<span class="iguana">{{ define "card" }}</span>
-<span class="html">&lt;div class="card"></span>
-<span class="html">    &lt;img src="<span class="iguana">{{ .image }}</span>"
-         alt="<span class="iguana">{{ .title }}</span>"></span>
-<span class="html">    &lt;h3><span class="iguana">{{ .title }}</span>&lt;/h3></span>
-<span class="html">    &lt;p><span class="iguana">{{ .description }}</span>&lt;/p></span>
-    <span class="iguana">{{ if .button }}</span>
-    <span class="html">&lt;a href="<span class="iguana">{{ .button.url }}</span>"
-       class="btn">
-            <span class="iguana">{{ .button.text }}</span>
-    &lt;/a></span>
-    <span class="iguana">{{ end }}</span>
-<span class="html">&lt;/div></span>
-<span class="iguana">{{ end }}</span>
-</span>
+		<div class="example as_row content_align_center accent_row">
+			<div class="code_block text_align_left">
+				<span class="code">
+					<span class="comment">&lt;!-- components/card.html --></span><br>
+					<span class="iguana">{{ define "card" }}</span><br>
+					<span class="html">&lt;div class="card"></span><br>
+					&nbsp;&nbsp;<span class="html">&lt;img src="<span class="iguana">{{ .image }}</span>" alt="<span class="iguana">{{ .title }}</span>"></span><br>
+					&nbsp;&nbsp;<span class="html">&lt;h3><span class="iguana">{{ .title }}</span>&lt;/h3></span><br>
+					&nbsp;&nbsp;<span class="html">&lt;p><span class="iguana">{{ .description }}</span>&lt;/p></span><br>
+					&nbsp;&nbsp;<span class="iguana">{{ if .button }}</span><br>
+					&nbsp;&nbsp;&nbsp;&nbsp;<span class="html">&lt;a href="<span class="iguana">{{ .button.url }}</span>" class="btn"><br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="iguana">{{ .button.text }}</span><br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&lt;/a></span><br>
+					&nbsp;&nbsp;<span class="iguana">{{ end }}</span><br>
+					<span class="html">&lt;/div></span><br>
+					<span class="iguana">{{ end }}</span><br>
+				</span>
 			</div>
-			<div class="description">
-				<h2>Dynamic Components</h4>
-				<p>Build reusable components with conditional rendering and dynamic data. Perfect for cards, buttons, and other repeatable elements throughout your site.</p>
+			<div class="description text_align_left">
+				<h2 class="description_title">Dynamic Components</h2>
+				<p class="description_text">Build reusable components with conditional rendering and dynamic data. Perfect for cards, buttons, and other repeatable elements throughout your site.</p>
 			</div>
 		</div>
-		</div>
-		<!-- <div class="side"></div> -->
-	</div>
+	</main>
 
-	<footer>
+	<footer class="as_column text_align_center">
 		<h2 class="title">Ready to Simplify Your HTML Development?</h2>
 		<h4 class="subtitle">Join thousands of developers who are building better websites, faster.</h4>
 		<div class="button_getStarted">
 			<a href="https://github.com/glasgo-seven/iGuana/releases">Start Building Now</a>
 		</div>
 		<hr>
-		<nav>
-			<a href="https://t.me/glasgo_seven" target="_blank">
-				<i class="fa-solid fa-paper-plane" alt="Telegram"></i>
+		<nav class="as_row">
+			<a class="nav_element as_column text_align_center" href="https://t.me/glasgo_seven" target="_blank">
+				<i class="nav_icon fa-solid fa-paper-plane" alt="Telegram"></i>
 			</a>
-			<a href="antipov.dimitry.s@yandex.ru" target="_blank">
-				<i class="fa-solid fa-envelope" alt="Email"></i>
+			<a class="nav_element as_column text_align_center" href="antipov.dimitry.s@yandex.ru" target="_blank">
+				<i class="nav_icon fa-solid fa-envelope" alt="Email"></i>
 			</a>
-			<a href="https://github.com/glasgo-seven" target="_blank">
-				<i class="fa-brands fa-github" alt="GitHub"></i>
+			<a class="nav_element as_column text_align_center" href="https://github.com/glasgo-seven" target="_blank">
+				<i class="nav_icon fa-brands fa-github" alt="GitHub"></i>
 			</a>
 		</nav>
-		Hosted on GitHub Pages<br>
-		Copyright © glasgo-seven 2024
+		<span class="copyright">
+			Hosted on GitHub Pages<br>
+			Copyright © glasgo-seven 2024
+		</span>
 	</footer>
 </body>
 
