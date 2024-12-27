@@ -16,18 +16,18 @@ Now:
 ```js
 class Base {
 	#padding = 8px; // private field
-	margin = 8px; // public field
+	margin = 8px;   // public field
 }
 
 class Style extends Base {
 	// padding is inherited from Base class
-	margin = 16px; // new value to field
+	margin = 16px;   // new value to field
 	color = #123456; // new field
 }
 
 class Error extends Style {
 	padding = 1000px;   // will result in error
-						// padding is a private field
+	                    // padding is a private field
 }
 ```
 
